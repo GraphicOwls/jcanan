@@ -1,0 +1,61 @@
+---
+import Container from './Container.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <Container>
+    <div class="footer-row">
+      <ul>
+        <li>
+          <a href="https://instagram.com/iamjcanan" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </li>
+        <li>
+          <a href="https://twitter.com/noahraskin_" target="_blank" rel="noopener noreferrer">Twitter</a>
+        </li>
+      </ul>
+      <p>©{year} J Canan</p>
+    </div>
+  </Container>
+</footer>
+
+<style>
+  footer {
+    padding: 1rem 0;
+    text-align: center;
+    color: hsl(255, 100%, 100%, .5);
+    font-weight: 300;
+    font-size: .8rem;
+  }
+
+  .footer-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 2rem
+  }
+
+  li a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    transition: color .3s ease-in-out;
+
+    &:hover {
+      color: hsl(255, 100%, 100%, 1);
+    }
+  }
+</style>
