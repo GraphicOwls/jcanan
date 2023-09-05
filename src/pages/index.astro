@@ -5,10 +5,9 @@ import Container from '../components/Container.astro';
 
 <Layout title="J Canan – Music for the Artist">
 	<main>
-		<div class="hero" transition:name="hero" transition:animate="fade">
+		<div class="hero" transition:name="hero">
 			<h1>Music for the Artist</h1>
 			<p class="subtitle">Beats & Mixing Services</p>
-			<div class="box" transition:name="box"></div>
 		</div>
 		<Container>
 			<div class="beats">
@@ -19,12 +18,6 @@ import Container from '../components/Container.astro';
 </Layout>
 
 <style>
-	.box {
-		width: 100px;
-		height: 100px;
-		background-color: pink;
-		background-size: cover;
-	}
 	main {
 		margin: auto;
 		padding: 1rem;
