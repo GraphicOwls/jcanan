@@ -1,16 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
 import Container from '../components/Container.astro';
-import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="J Canan – Music for the Artist">
-	<Navbar />
 	<main>
 		<div class="hero" transition:name="hero" transition:animate="fade">
 			<h1>Music for the Artist</h1>
 			<p class="subtitle">Beats & Mixing Services</p>
+			<div class="box" transition:name="box"></div>
 		</div>
 		<Container>
 			<div class="beats">
@@ -18,10 +16,15 @@ import Footer from '../components/Footer.astro';
 			</div>
 		</Container>
 	</main>
-	<Footer />
 </Layout>
 
 <style>
+	.box {
+		width: 100px;
+		height: 100px;
+		background-color: pink;
+		background-size: cover;
+	}
 	main {
 		margin: auto;
 		padding: 1rem;

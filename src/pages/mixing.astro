@@ -1,6 +1,4 @@
 ---
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
 import Layout from '../layouts/Layout.astro';
 
 const status = {
@@ -19,9 +17,9 @@ const currentStatus = status.unavailable;
 
 
 <Layout title="Mixing">
-  <Navbar />
   <main>
     <div class="hero" transition:name="hero" transition:animate="fade">
+      <div class="box" transition:name="box"></div>
       <h1>Mixing & Mastering</h1>
       <p class="subtitle">Quality Mixing & Mastering</p>
       <div class="status-wrap">
@@ -30,10 +28,17 @@ const currentStatus = status.unavailable;
       </div>
     </div>
   </main>
-  <Footer />
 </Layout>
 
 <style>
+
+  .box {
+		width: 200px;
+		height: 200px;
+		background-color: pink;
+		background-size: cover;
+    border-raidus: 50%;
+	}
 	main {
 		margin: auto;
 		padding: 1rem;
