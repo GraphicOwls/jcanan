@@ -1,15 +1,28 @@
 ---
 import Container from './Container.astro';
 
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1);
+// const pathname = new URL(Astro.request.url).pathname;
+// const currentPath = pathname.slice(1);
 
-const path = (path: string): string => {
-  if (currentPath === path) {
-    return 'current';
-  }
-  return '';
-};
+// const path = (path: string): string => {
+//   if (currentPath === path) {
+//     return 'current';
+//   }
+//   return '';
+// };
+
+console.log("Astro.url.pathname")
+
+const navLinks = [
+  {
+    href: '/mixing',
+    text: 'Mixing',
+  },
+  {
+    href: 'mailto:get@jcanan.net',
+    text: 'Contact',
+  },
+];
 ---
 
 <nav>
@@ -20,8 +33,23 @@ const path = (path: string): string => {
       </a>
       <div class="col-md-12">
         <ul class="nav-menu">
-          <li role="presentation"><a href="/mixing" class={path('mixing')}>Mixing</a></li>
-          <li role="presentation"><a href="mailto:get@jcanan.net" class={path('contact')}>Contact</a></li>
+          {navLinks.map(link => (
+            <li role="presentation">
+              <a 
+                aria-current={Astro.url.pathname === link.href}
+                class:list={[
+                  'link',
+                  {
+                  current:
+                    Astro.url.pathname === link.href || (link.href !== '/' && Astro.url.pathname.startsWith(link.href)),
+                  }
+                ]}
+                href={link.href}
+              >
+                {link.text}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
