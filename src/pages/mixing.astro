@@ -25,6 +25,30 @@ const currentStatus = status.available;
         <div class="status-indicator" style={{background: currentStatus.color}}></div>
         <p class="status-text"><span class="status">{currentStatus.text}</span></p>
       </div>
+      <div class="mix-container">
+        <img src="/studio-1.webp" alt="Home Studio" width="800" height="400" />
+        <div>
+          <h3>Song Mixing</h3>
+          <p class="p-text">
+            Elevate your track with a professional vocal mix designed to sit perfectly in the pocket. My process blends clarity with character, utilizing surgical EQ, precise leveling, and clean compression to ensure your performance shines and drives energy. From natural or stylistic pitch correction to creative delays and reverbs, I tailor every effect to match the specific emotion and vibe of your music.
+          </p>
+          <p class="p-text">
+            Beyond the creative mix, I ensure a pristine technical foundation with thorough de-essing, noise cleanup, and cohesive bus processing. You will receive a standard streaming-ready master (24-bit WAV & MP3) that sounds competitive on all platforms. With two rounds of revisions included and a typical turnaround of 2–4 business days per two songs, you get a polished, release-ready track without the hassle.
+          </p>
+          <script async
+            src="https://js.stripe.com/v3/buy-button.js">
+          </script>
+  
+          <div class="stripe-buy-button">
+            <stripe-buy-button
+              buy-button-id="buy_btn_1SWMRJLw32h8C0uUzy4QdKTv"
+              publishable-key="pk_live_9sXhjAJqo4mcoCCCdIijHwk9"
+            >
+          </stripe-buy-button>
+          <p class="note">⚠️ Set the quantity for the number of songs you need mixed</p>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 </Layout>
@@ -56,6 +80,11 @@ const currentStatus = status.available;
 		margin-top: 0;
 	}
 
+  h3 {
+    margin-top: 0;
+    margin-bottom: .2rem;
+  }
+
 	.subtitle {
 		text-transform: uppercase;
 		letter-spacing: .6rem;
@@ -82,5 +111,43 @@ const currentStatus = status.available;
 
   .status {
     color: hsl(255, 100%, 100%, 1);
+  }
+
+  .mix-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 4rem;
+    gap: 3rem;
+    max-width: 980px;
+    
+    & img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  .p-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  @media (width >= 768px) {
+    .mix-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .stripe-buy-button {
+    margin-top: 2rem;
+  }
+
+  .note {
+    font-size: 0.8rem;
+    color: hsl(43, 62%, 57%);
+    margin-top: 0.5rem;
+    padding: .3em .6em;
+    background-color: hsl(43, 62%, 57%, 0.1);
+    border-radius: 4px;
   }
 </style>
